@@ -1,540 +1,736 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Capybara Tech LLC | 弱电/网络/数据中心支持</title>
-  <meta name="description" content="Capybara Tech LLC 提供弱电、摄像头、网络与数据中心现场支持服务，包含安装协调、测试交付与文档。" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Capybara Tech LLC | Low Voltage • Network • Data Center Support</title>
+  <meta name="description" content="Capybara Tech LLC — Low voltage security cameras, structured cabling, networking, and data center support. (EN/中文双语)" />
   <meta name="robots" content="index,follow" />
 
+  <!-- OpenGraph -->
   <meta property="og:title" content="Capybara Tech LLC" />
-  <meta property="og:description" content="弱电 / 摄像头 / 网络 / 数据中心支持 | Low-Voltage • Security • Network • Data Center Support" />
+  <meta property="og:description" content="Low Voltage • Network • Data Center Support (EN/中文双语)" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://capybaratechllc.com/" />
+  <meta property="og:url" content="https://capybaratechllc.com" />
 
   <style>
     :root{
-      --bg:#0b1020;
-      --card:#0f1630;
-      --muted:#a8b3cf;
-      --text:#eaf0ff;
-      --line:rgba(255,255,255,.12);
-      --accent:#4dd2ff;
-      --accent2:#7c5cff;
-      --ok:#60ffa6;
-      --warn:#ffd27a;
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
-      --radius: 16px;
+      --bg1:#fff7ec;
+      --bg2:#f4fbff;
+      --ink:#121622;
+      --muted:#5a6478;
+      --card:#ffffffcc;
+      --line:#e7e7ee;
+      --brand:#ff7a18;
+      --brand2:#2d7dff;
+      --ok:#17a34a;
+      --shadow: 0 18px 60px rgba(18,22,34,.10);
+      --shadow2: 0 10px 30px rgba(18,22,34,.10);
+      --radius: 18px;
+      --radius2: 26px;
       --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "PingFang SC","Hiragino Sans GB","Microsoft YaHei";
-      color:var(--text);
-      background: radial-gradient(1200px 700px at 20% 10%, rgba(77,210,255,.18), transparent 55%),
-                  radial-gradient(900px 600px at 90% 20%, rgba(124,92,255,.18), transparent 55%),
-                  linear-gradient(180deg, var(--bg), #070a14 65%, #050711);
-      line-height:1.6;
+      font-family:var(--font);
+      color:var(--ink);
+      background:
+        radial-gradient(900px 420px at 10% 10%, #ffe1c8 0%, transparent 65%),
+        radial-gradient(900px 420px at 90% 0%, #cfe9ff 0%, transparent 60%),
+        radial-gradient(900px 420px at 90% 95%, #d9ffe9 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      overflow-x:hidden;
     }
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 0 20px;}
     .nav{
-      position:sticky; top:0; z-index:9;
+      position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(5,7,17,.6);
-      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      border-bottom:1px solid rgba(231,231,238,.7);
     }
-    .nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:14px}
-    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
-    .logo{
-      width:34px; height:34px; border-radius:12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: var(--shadow);
-      position:relative;
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap:14px;
     }
-    .logo:after{
-      content:"";
-      position:absolute; inset:9px 10px 9px 10px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.55);
-      opacity:.7;
-    }
-    .brand strong{letter-spacing:.2px}
-    .navlinks{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
-    .navlinks a{
+    .brand{
+      display:flex; align-items:center; gap:12px;
       text-decoration:none;
-      color:var(--muted);
-      font-weight:700;
-      font-size:14px;
-      padding:10px 10px;
-      border-radius:12px;
-      border:1px solid transparent;
     }
-    .navlinks a:hover{
-      color:var(--text);
-      border-color:var(--line);
-      background: rgba(255,255,255,.04);
+    .brand img{
+      width:44px; height:44px; border-radius:14px;
+      background:#fff; box-shadow: var(--shadow2);
+      object-fit:cover;
+    }
+    .brand .name{
+      display:flex; flex-direction:column; line-height:1.1;
+    }
+    .brand .name strong{font-size:14px; letter-spacing:.2px}
+    .brand .name span{font-size:12px; color:var(--muted)}
+    .nav-actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border:1px solid rgba(231,231,238,.9);
+      border-radius:999px;
+      background: rgba(255,255,255,.85);
+      box-shadow: 0 8px 20px rgba(18,22,34,.06);
+      font-size:13px;
+      color: var(--muted);
     }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      text-decoration:none;
+      appearance:none; border:0; cursor:pointer;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:700;
+      background: linear-gradient(135deg, var(--brand), #ffb017);
+      color:#111;
+      box-shadow: 0 12px 26px rgba(255,122,24,.25);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 16px 34px rgba(255,122,24,.30);}
+    .btn.secondary{
+      background: rgba(255,255,255,.9);
+      color: var(--ink);
+      border:1px solid rgba(231,231,238,.9);
+      box-shadow: 0 10px 22px rgba(18,22,34,.08);
       font-weight:800;
-      box-shadow: 0 8px 18px rgba(0,0,0,.22);
-      cursor:pointer;
-      user-select:none;
     }
-    .btn.primary{
-      border-color: rgba(77,210,255,.35);
-      background: linear-gradient(135deg, rgba(77,210,255,.22), rgba(124,92,255,.16));
+    .btn.secondary:hover{transform: translateY(-1px);}
+    .hero{
+      padding: 54px 0 26px;
+      position:relative;
     }
-    .btn.ghost{
-      border-color: rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 22px;
+      align-items:stretch;
     }
-    .btn:hover{transform: translateY(-1px)}
-    .hero{padding:52px 0 18px}
-    .grid{display:grid; gap:18px}
-    .heroGrid{grid-template-columns: 1.35fr .65fr; align-items:stretch}
     .card{
-      background: rgba(15,22,48,.72);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+      background: var(--card);
+      border:1px solid rgba(231,231,238,.9);
+      border-radius: var(--radius2);
       box-shadow: var(--shadow);
+    }
+    .hero-left{
+      padding: 26px 22px 22px;
+      position:relative;
       overflow:hidden;
     }
-    .card .p{padding:22px}
-    h1{margin:0 0 10px; font-size:42px; line-height:1.12; letter-spacing:-.6px}
-    .lead{color:var(--muted); font-size:16px; margin:0 0 18px}
-    .badgeRow{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 0}
-    .badge{
-      font-size:13px; font-weight:800;
-      padding:8px 10px;
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 240px at 10% 0%, rgba(255,122,24,.18) 0%, transparent 60%),
+        radial-gradient(520px 240px at 90% 20%, rgba(45,125,255,.18) 0%, transparent 55%),
+        radial-gradient(520px 240px at 65% 120%, rgba(23,163,74,.14) 0%, transparent 55%);
+      pointer-events:none;
+    }
+    .hero-left > *{position:relative}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: #d7e2ff;
-    }
-    .kpis{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    .kpi{
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      padding:14px;
-    }
-    .kpi b{display:block; font-size:18px}
-    .kpi span{color:var(--muted); font-size:12px}
-    .section{padding:18px 0}
-    .section h2{margin:0 0 12px; font-size:22px; letter-spacing:-.2px}
-    .muted{color:var(--muted)}
-    .services{grid-template-columns:repeat(3, 1fr)}
-    .service h3{margin:0 0 8px; font-size:16px}
-    .service p{margin:0; color:var(--muted); font-size:14px}
-    .list{margin:10px 0 0; padding:0 0 0 18px; color:var(--muted); font-size:14px}
-    .cta{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      padding:18px 22px;
-      background: linear-gradient(135deg, rgba(77,210,255,.12), rgba(124,92,255,.10));
-      border-top:1px solid rgba(255,255,255,.10);
-    }
-    .cta strong{display:block; font-size:16px}
-    .cta span{color:var(--muted); font-size:13px}
-    .twoCol{grid-template-columns: 1fr 1fr}
-    .contactGrid{grid-template-columns: 1fr 1fr}
-    .field{
-      display:flex; gap:10px; align-items:center;
-      padding:12px 14px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-      text-decoration:none;
+      background: rgba(255,255,255,.75);
+      border:1px dashed rgba(255,122,24,.55);
+      color:#7a3a08;
       font-weight:800;
+      font-size:12px;
+      letter-spacing:.3px;
     }
-    .field small{display:block; color:var(--muted); font-weight:650}
-    .dot{width:10px; height:10px; border-radius:999px; background:var(--ok); box-shadow:0 0 0 3px rgba(96,255,166,.15)}
-    .langPill{
-      display:inline-flex; gap:6px; align-items:center;
-      padding:8px 10px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
+    h1{
+      margin:14px 0 10px;
+      font-size: 42px;
+      line-height:1.05;
+      letter-spacing: -0.6px;
     }
-    .langPill span{font-size:12px; color:var(--muted); font-weight:800}
-    .langPill button{
-      border:0; background:transparent; color:var(--text);
-      font-weight:900; font-size:12px; padding:6px 10px; border-radius:999px;
-      cursor:pointer;
+    .sub{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.6;
+      max-width: 62ch;
     }
-    .langPill button.active{
-      background: rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.14);
-    }
-    .note{
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      padding:12px 14px;
-      color:var(--muted);
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+    .mini{
+      margin-top:14px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color: var(--muted);
       font-size:13px;
     }
-    .footer{padding:26px 0 40px; color:var(--muted); font-size:13px}
-    [data-lang]{display:none}
-    [data-lang].show{display:block}
+    .mini .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(231,231,238,.9);
+      background: rgba(255,255,255,.8);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--ok);
+      box-shadow: 0 0 0 6px rgba(23,163,74,.12);
+    }
 
+    .hero-right{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .mascot{
+      padding: 16px;
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(231,231,238,.9);
+      box-shadow: 0 12px 30px rgba(18,22,34,.08);
+      position:relative;
+      overflow:hidden;
+    }
+    .mascot .row{display:flex; gap:12px; align-items:center;}
+    .mascot img{
+      width:82px; height:82px; border-radius: 22px;
+      background:#fff;
+      box-shadow: 0 16px 40px rgba(18,22,34,.10);
+      object-fit:cover;
+    }
+    .mascot h3{margin:0; font-size:16px}
+    .mascot p{margin:4px 0 0; color:var(--muted); font-size:13px; line-height:1.55}
+    .bubble{
+      margin-top:12px;
+      padding:12px 12px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(255,122,24,.10), rgba(45,125,255,.10));
+      border:1px solid rgba(231,231,238,.9);
+      color:#283046;
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    section{padding: 18px 0;}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 12px;
+      margin: 10px 0 12px;
+    }
+    .section-title h2{margin:0; font-size:22px; letter-spacing:-.2px}
+    .section-title p{margin:0; color:var(--muted); font-size:13px}
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .svc{
+      padding: 16px;
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.85);
+      border:1px solid rgba(231,231,238,.9);
+      box-shadow: 0 12px 30px rgba(18,22,34,.06);
+      position:relative;
+      overflow:hidden;
+      transition: transform .12s ease;
+    }
+    .svc:hover{transform: translateY(-2px);}
+    .svc .top{
+      display:flex; align-items:center; gap:12px;
+      margin-bottom:8px;
+    }
+    .icon{
+      width:54px; height:54px;
+      border-radius: 18px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(255,122,24,.18), rgba(45,125,255,.14));
+      border:1px solid rgba(231,231,238,.9);
+    }
+    .svc h3{margin:0; font-size:16px}
+    .svc p{margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.55}
+    .svc ul{
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color: #3b465f;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .svc li{margin: 4px 0;}
+    .about{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .about .box{
+      padding: 18px;
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.85);
+      border:1px solid rgba(231,231,238,.9);
+      box-shadow: 0 12px 30px rgba(18,22,34,.06);
+    }
+    .about .box h3{margin:0 0 8px; font-size:16px}
+    .about .box p{margin:0; color:var(--muted); font-size:13px; line-height:1.65}
+    .check{
+      display:flex; gap:10px; align-items:flex-start;
+      margin-top:10px;
+      color:#2c3550;
+      font-size:13px;
+      line-height:1.55;
+    }
+    .check .mark{
+      width:22px; height:22px; border-radius:8px;
+      background: rgba(23,163,74,.14);
+      border:1px solid rgba(23,163,74,.35);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+
+    .contact{
+      padding: 18px;
+      border-radius: var(--radius2);
+      background: linear-gradient(135deg, rgba(255,122,24,.10), rgba(45,125,255,.10));
+      border:1px solid rgba(231,231,238,.9);
+      box-shadow: var(--shadow);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+    .contact h2{margin:0; font-size:18px}
+    .contact p{margin:4px 0 0; color:var(--muted); font-size:13px}
+    .contact .right{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+    .email{
+      font-weight:900;
+      padding: 10px 14px;
+      border-radius:999px;
+      background: rgba(255,255,255,.9);
+      border:1px solid rgba(231,231,238,.9);
+      box-shadow: 0 10px 22px rgba(18,22,34,.08);
+      text-decoration:none;
+    }
+
+    footer{
+      padding: 24px 0 46px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      border-top:1px solid rgba(231,231,238,.9);
+      padding-top:14px;
+    }
+
+    /* Responsive */
     @media (max-width: 920px){
-      h1{font-size:34px}
-      .heroGrid{grid-template-columns:1fr}
-      .services{grid-template-columns:1fr}
-      .twoCol,.contactGrid{grid-template-columns:1fr}
-      .cta{flex-direction:column; align-items:flex-start}
-      .navlinks{display:none}
+      .hero-grid{grid-template-columns: 1fr; }
+      h1{font-size: 36px;}
+      .grid-3{grid-template-columns: 1fr;}
+      .about{grid-template-columns: 1fr;}
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Capybara Tech LLC",
-    "url":"https://capybaratechllc.com/",
-    "email":"admin@capybaratechllc.com",
-    "description":"Low-voltage, security camera, network deployment, and data center field support."
-  }
-  </script>
 </head>
 
 <body>
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Capybara Tech Home">
-      <span class="logo" aria-hidden="true"></span>
-      <div>
-        <strong>Capybara Tech LLC</strong><br/>
-        <span class="muted" style="font-size:12px;" data-lang="zh">弱电 / 摄像头 / 网络 / 数据中心支持</span>
-        <span class="muted" style="font-size:12px;" data-lang="en">Low-Voltage • Security • Network • Data Center Support</span>
-      </div>
-    </a>
-
-    <nav class="navlinks" aria-label="Primary">
-      <a href="#services" data-lang="zh">服务</a>
-      <a href="#about" data-lang="zh">关于</a>
-      <a href="#industries" data-lang="zh">场景</a>
-      <a href="#contact" data-lang="zh">联系</a>
-
-      <a href="#services" data-lang="en">Services</a>
-      <a href="#about" data-lang="en">About</a>
-      <a href="#industries" data-lang="en">Use Cases</a>
-      <a href="#contact" data-lang="en">Contact</a>
-    </nav>
-
-    <div style="display:flex; gap:10px; align-items:center;">
-      <div class="langPill" aria-label="Language switch">
-        <span>LANG</span>
-        <button id="btnZh" class="active" type="button">中文</button>
-        <button id="btnEn" type="button">EN</button>
-      </div>
-
-      <a class="btn primary" href="mailto:admin@capybaratechllc.com?subject=Inquiry%20-%20Capybara%20Tech">
-        <span data-lang="zh">邮件联系</span>
-        <span data-lang="en">Email</span>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Capybara Tech">
+        <img src="logo.png" alt="Capybara Tech Logo" />
+        <div class="name">
+          <strong>Capybara Tech LLC</strong>
+          <span id="navSubtitle">Low Voltage • Network • Data Center</span>
+        </div>
       </a>
-    </div>
-  </div>
-</header>
 
-<main id="top" class="wrap">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="grid heroGrid">
-      <div class="card">
-        <div class="p">
-          <h1 data-lang="zh">弱电/网络与数据中心现场支持<br/>快速交付，文档齐全。</h1>
-          <h1 data-lang="en">Low-voltage & data center support<br/>delivered fast, documented well.</h1>
-
-          <p class="lead" data-lang="zh">
-            Capybara Tech LLC 提供弱电系统（摄像头/门禁/布线）、网络部署与数据中心现场支持服务。
-            我们强调执行力、测试交付与文档，帮助客户按期上线。
-          </p>
-          <p class="lead" data-lang="en">
-            Capybara Tech LLC supports low-voltage systems (CCTV, access control, structured cabling),
-            network deployments, and data center field services. We focus on execution, testing, and documentation
-            to help projects go live on schedule.
-          </p>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
-            <a class="btn primary" href="#contact">
-              <span data-lang="zh">获取报价</span><span data-lang="en">Get a Quote</span>
-            </a>
-            <a class="btn ghost" href="#services">
-              <span data-lang="zh">查看服务</span><span data-lang="en">View Services</span>
-            </a>
-          </div>
-
-          <div class="badgeRow" aria-label="Highlights">
-            <span class="badge" data-lang="zh">快速响应</span>
-            <span class="badge" data-lang="zh">现场可执行</span>
-            <span class="badge" data-lang="zh">测试交付</span>
-            <span class="badge" data-lang="zh">文档驱动</span>
-
-            <span class="badge" data-lang="en">Fast response</span>
-            <span class="badge" data-lang="en">Field-ready</span>
-            <span class="badge" data-lang="en">Test & handover</span>
-            <span class="badge" data-lang="en">Documentation</span>
-          </div>
-        </div>
-
-        <div class="cta">
-          <div>
-            <strong data-lang="zh">需要本周支持？</strong>
-            <span data-lang="zh">发 scope + 地址 + 时间，我们会回复计划与下一步。</span>
-
-            <strong data-lang="en">Need support this week?</strong>
-            <span data-lang="en">Email scope + site + timeline. We’ll reply with next steps.</span>
-          </div>
-          <a class="btn" href="mailto:admin@capybaratechllc.com?subject=Scope%20Request%20-%20Capybara%20Tech">
-            <span data-lang="zh">发送需求</span><span data-lang="en">Send Scope</span>
-          </a>
-        </div>
+      <div class="nav-actions">
+        <span class="pill" id="pill1">🦫 Friendly • Fast • Reliable</span>
+        <button class="btn secondary" id="langBtn" type="button" aria-label="Language toggle">中文</button>
+        <a class="btn" href="#contact" id="navCta">Contact</a>
       </div>
+    </div>
+  </header>
 
-      <div class="card">
-        <div class="p">
-          <h2 style="margin-top:0;" data-lang="zh">概览</h2>
-          <h2 style="margin-top:0;" data-lang="en">At a glance</h2>
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-left">
+          <div class="kicker" id="kicker">✨ Small team. Big support energy.</div>
+          <h1 id="heroTitle">Low Voltage, Networking & Data Center Support — with Capybara-calm vibes.</h1>
+          <p class="sub" id="heroSub">
+            We help you deploy and maintain security cameras, structured cabling, network gear, and on-site data center tasks.
+            Clean work, clear communication, and solid delivery.
+          </p>
 
-          <div class="kpis">
-            <div class="kpi">
-              <b data-lang="zh">弱电系统</b><b data-lang="en">Low-voltage</b>
-              <span data-lang="zh">摄像头 / 门禁 / 布线</span><span data-lang="en">CCTV / Access / Cabling</span>
+          <div class="cta-row">
+            <a class="btn" href="#services" id="ctaPrimary">See Services</a>
+            <a class="btn secondary" href="#about" id="ctaSecondary">About Us</a>
+          </div>
+
+          <div class="mini">
+            <div class="tag"><span class="dot"></span><span id="tag1">On-site support</span></div>
+            <div class="tag">🧰 <span id="tag2">Deployment & troubleshooting</span></div>
+            <div class="tag">🧩 <span id="tag3">Documentation-friendly</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="mascot">
+            <div class="row">
+              <img src="logo.png" alt="Capybara Tech Logo" />
+              <div>
+                <h3 id="cardTitle">Capybara Tech</h3>
+                <p id="cardSub">Cute brand, serious delivery.</p>
+              </div>
             </div>
-            <div class="kpi">
-              <b data-lang="zh">网络部署</b><b data-lang="en">Networking</b>
-              <span data-lang="zh">交换机/AP/光纤/机柜</span><span data-lang="en">Switch/AP/Fiber/Racks</span>
-            </div>
-            <div class="kpi">
-              <b data-lang="zh">数据中心支持</b><b data-lang="en">Data centers</b>
-              <span data-lang="zh">现场协调/上架/标签</span><span data-lang="en">Coordination / Racking / Labeling</span>
-            </div>
-            <div class="kpi">
-              <b data-lang="zh">交付文档</b><b data-lang="en">Deliverables</b>
-              <span data-lang="zh">测试记录/竣工资料</span><span data-lang="en">Test logs / Closeout</span>
+            <div class="bubble" id="bubble">
+              We keep things simple: show up, communicate clearly, finish clean, and leave your site better than we found it.
             </div>
           </div>
 
-          <div class="note" style="margin-top:14px;">
-            <span data-lang="zh">提示：这是官网 v1 版本，用于对外展示与背调（银行/客户/供应商）。后续可随时扩展。</span>
-            <span data-lang="en">Tip: This is a v1 credibility site (bank, clients, vendors). Expand anytime.</span>
+          <div class="mascot">
+            <h3 style="margin:0 0 8px" id="quickTitle">Quick Scope</h3>
+            <p style="margin:0;color:var(--muted);font-size:13px;line-height:1.65" id="quickSub">
+              Cameras • AP/Switch • Cabling • Rack/IT room support • Data center hands
+            </p>
           </div>
-        </div>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <h2 data-lang="zh">服务</h2>
-    <h2 data-lang="en">Services</h2>
-
-    <p class="muted" data-lang="zh">支持单点任务或整包交付：安装协调、测试验收、文档归档。</p>
-    <p class="muted" data-lang="en">Support a single task or full delivery: install coordination, testing, and documentation.</p>
-
-    <div class="grid services" style="margin-top:14px;">
-      <div class="card service">
-        <div class="p">
-          <h3 data-lang="zh">摄像头 / 门禁系统</h3>
-          <h3 data-lang="en">CCTV / Access Control</h3>
-          <p data-lang="zh">摄像头点位核对、布线与安装协调、设备上线、测试与交付。</p>
-          <p data-lang="en">Camera layout verification, cabling & install coordination, bring-up, testing and handover.</p>
-          <ul class="list">
-            <li data-lang="zh">点位/角度/覆盖范围确认</li>
-            <li data-lang="zh">PoE 供电与链路测试</li>
-            <li data-lang="zh">标签与竣工清单</li>
-
-            <li data-lang="en">Layout, angles & coverage</li>
-            <li data-lang="en">PoE & link testing</li>
-            <li data-lang="en">Labeling & as-built lists</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card service">
-        <div class="p">
-          <h3 data-lang="zh">网络与结构化布线</h3>
-          <h3 data-lang="en">Networking & Structured Cabling</h3>
-          <p data-lang="zh">配线架/跳线/机柜整理，交换机/AP 部署协作，测试验收。</p>
-          <p data-lang="en">Patch panels, rack dressing, switch/AP deployment support, testing and acceptance.</p>
-          <ul class="list">
-            <li data-lang="zh">铜缆/光纤端接与测试配合</li>
-            <li data-lang="zh">机柜理线与端口标识</li>
-            <li data-lang="zh">现场问题快速排查</li>
-
-            <li data-lang="en">Copper/fiber termination support</li>
-            <li data-lang="en">Rack dressing & port labeling</li>
-            <li data-lang="en">Rapid field troubleshooting</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card service">
-        <div class="p">
-          <h3 data-lang="zh">数据中心现场支持</h3>
-          <h3 data-lang="en">Data Center Field Support</h3>
-          <p data-lang="zh">上架协调、资产标签、交付文档、跨团队沟通与现场验收支持。</p>
-          <p data-lang="en">Racking coordination, asset labeling, delivery documentation, and on-site acceptance support.</p>
-          <ul class="list">
-            <li data-lang="zh">上架/布线/标签流程执行</li>
-            <li data-lang="zh">现场日报与问题闭环</li>
-            <li data-lang="zh">交付包（照片/记录/清单）</li>
-
-            <li data-lang="en">Racking/cabling/labeling execution</li>
-            <li data-lang="en">Daily reports & issue closure</li>
-            <li data-lang="en">Closeout package (photos/logs/lists)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT + USE CASES -->
-  <section class="section">
-    <div class="grid twoCol">
-      <div id="about" class="card">
-        <div class="p">
-          <h2 data-lang="zh">关于我们</h2>
-          <h2 data-lang="en">About</h2>
-
-          <p class="muted" data-lang="zh">
-            Capybara Tech 专注“现场落地”。我们以清晰沟通、规范文档和可执行的交付节奏，
-            让弱电与网络工作按期完成，并且便于客户验收与运维。
-          </p>
-          <p class="muted" data-lang="en">
-            Capybara Tech focuses on field execution. Clear communication, clean documentation, and a practical delivery
-            cadence help low-voltage and network work finish on time—and remain easy to operate and maintain.
-          </p>
-
-          <p class="muted" style="margin-bottom:0;" data-lang="zh">
-            <strong style="color:var(--text);">交付理念：</strong>可测量、可验收、可追溯。
-          </p>
-          <p class="muted" style="margin-bottom:0;" data-lang="en">
-            <strong style="color:var(--text);">Delivery mindset:</strong> measurable, acceptable, traceable.
-          </p>
-        </div>
-      </div>
-
-      <div id="industries" class="card">
-        <div class="p">
-          <h2 data-lang="zh">典型场景</h2>
-          <h2 data-lang="en">Use Cases</h2>
-
-          <ul class="list">
-            <li data-lang="zh">办公室/仓库：摄像头、AP 覆盖、机柜整理</li>
-            <li data-lang="zh">机房/数据中心：上架、标签、交付包</li>
-            <li data-lang="zh">改造项目：原系统迁移、端口/链路排查</li>
-            <li data-lang="zh">多团队协作：对接 GC/弱电/网络/业主</li>
-
-            <li data-lang="en">Office/warehouse: CCTV, Wi-Fi coverage, rack organization</li>
-            <li data-lang="en">MDF/IDF & data centers: racking, labeling, closeout package</li>
-            <li data-lang="en">Retrofits: migration, port/link troubleshooting</li>
-            <li data-lang="en">Multi-party coordination: GC, LV, network teams, owners</li>
-          </ul>
-
-          <p class="muted" style="font-size:13px; margin-top:10px;" data-lang="zh">
-            需要持证/许可的专业施工，我们可配合对接合规的持证承包商完成。
-          </p>
-          <p class="muted" style="font-size:13px; margin-top:10px;" data-lang="en">
-            For regulated work requiring specific licenses, we coordinate with appropriately licensed contractors.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2 data-lang="zh">联系</h2>
-    <h2 data-lang="en">Contact</h2>
-
-    <p class="muted" data-lang="zh">请邮件发送：项目地址、范围、期望时间、现场联系人。我们会回复报价/计划。</p>
-    <p class="muted" data-lang="en">Email: site, scope, target dates, and on-site contact. We’ll reply with a plan/quote.</p>
-
-    <div class="grid contactGrid" style="margin-top:14px;">
-      <a class="field" href="mailto:admin@capybaratechllc.com?subject=Inquiry%20-%20Capybara%20Tech">
-        <span class="dot" aria-hidden="true"></span>
+    <section id="services">
+      <div class="section-title">
         <div>
-          <span data-lang="zh">邮箱</span><span data-lang="en">Email</span>
-          <small>admin@capybaratechllc.com</small>
+          <h2 id="svcTitle">Services</h2>
+          <p id="svcDesc">Practical, on-site, and documentation-ready support.</p>
         </div>
-      </a>
-
-      <a class="field" href="#">
-        <span class="dot" aria-hidden="true"></span>
-        <div>
-          <span data-lang="zh">服务范围</span><span data-lang="en">Service Area</span>
-          <small data-lang="zh">纽约 • 德州 • 可支持多州</small>
-          <small data-lang="en">New York • Texas • Multi-state support</small>
-        </div>
-      </a>
-    </div>
-
-    <div class="card" style="margin-top:14px;">
-      <div class="p">
-        <h2 style="margin-top:0;" data-lang="zh">邮件模板（复制粘贴）</h2>
-        <h2 style="margin-top:0;" data-lang="en">Email Template (copy/paste)</h2>
-
-        <pre style="margin:0; padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); overflow:auto; color:#dbe6ff;"
-data-lang="zh">项目名称：
-地址：
-范围简述（摄像头/网络/上架等）：
-目标日期：
-现场限制（作业时间/门禁/停车）：
-已有资料（图纸/BOM/点位表）：
-联系人：</pre>
-
-        <pre style="margin:14px 0 0; padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); overflow:auto; color:#dbe6ff;"
-data-lang="en">Project:
-Location:
-Scope summary (CCTV / network / racking):
-Target dates:
-Site constraints (hours / access / parking):
-Docs available (drawings / BOM / device list):
-Point of contact:</pre>
+        <p id="svcNote">No phone shown • Email only</p>
       </div>
-    </div>
-  </section>
 
-  <footer class="footer">
-    © <span id="y"></span> Capybara Tech LLC. All rights reserved.
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  </footer>
-</main>
+      <div class="grid-3">
+        <!-- Service 1 -->
+        <div class="svc">
+          <div class="top">
+            <div class="icon" aria-hidden="true">
+              <!-- Cute CCTV Camera SVG -->
+              <svg width="34" height="34" viewBox="0 0 64 64" fill="none">
+                <path d="M10 26c0-6 5-11 11-11h22c6 0 11 5 11 11v6H10v-6Z" fill="#fff"/>
+                <path d="M14 22c2-4 6-7 10-7h16c4 0 8 3 10 7" stroke="#121622" stroke-width="3" stroke-linecap="round"/>
+                <rect x="20" y="30" width="24" height="14" rx="7" fill="#ffedd5" stroke="#121622" stroke-width="3"/>
+                <circle cx="32" cy="37" r="5" fill="#2d7dff" opacity=".25" stroke="#121622" stroke-width="3"/>
+                <path d="M28 45l-6 8h20l-6-8" fill="#fff" stroke="#121622" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M44 22h6" stroke="#ff7a18" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 id="s1h">Security Cameras (CCTV)</h3>
+              <p id="s1p">Install, adjust, and verify—clean cabling and reliable results.</p>
+            </div>
+          </div>
+          <ul id="s1ul">
+            <li>Camera & NVR setup, aiming, labeling</li>
+            <li>PoE switch integration</li>
+            <li>Basic testing & handover notes</li>
+          </ul>
+        </div>
 
-<script>
-  // Language switcher
-  const btnZh = document.getElementById('btnZh');
-  const btnEn = document.getElementById('btnEn');
-  const zhNodes = document.querySelectorAll('[data-lang="zh"]');
-  const enNodes = document.querySelectorAll('[data-lang="en"]');
+        <!-- Service 2 -->
+        <div class="svc">
+          <div class="top">
+            <div class="icon" aria-hidden="true">
+              <!-- Cute Network SVG -->
+              <svg width="34" height="34" viewBox="0 0 64 64" fill="none">
+                <rect x="12" y="14" width="40" height="14" rx="7" fill="#e0f2fe" stroke="#121622" stroke-width="3"/>
+                <rect x="18" y="18" width="6" height="6" rx="2" fill="#ff7a18"/>
+                <rect x="28" y="18" width="6" height="6" rx="2" fill="#ff7a18"/>
+                <rect x="38" y="18" width="6" height="6" rx="2" fill="#ff7a18"/>
+                <path d="M32 28v10" stroke="#121622" stroke-width="3" stroke-linecap="round"/>
+                <path d="M18 46h28" stroke="#121622" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="18" cy="46" r="5" fill="#fff" stroke="#121622" stroke-width="3"/>
+                <circle cx="46" cy="46" r="5" fill="#fff" stroke="#121622" stroke-width="3"/>
+                <path d="M46 46c0-7-6-13-14-13s-14 6-14 13" stroke="#2d7dff" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 id="s2h">Network & Wi-Fi</h3>
+              <p id="s2p">AP / switch staging, patching, and basic troubleshooting on-site.</p>
+            </div>
+          </div>
+          <ul id="s2ul">
+            <li>AP & switch installation / rack tidy</li>
+            <li>Patch panel labeling & organization</li>
+            <li>Connectivity checks (VLAN / uplink basics)</li>
+          </ul>
+        </div>
 
-  function setLang(lang){
-    const showZh = lang === 'zh';
-    zhNodes.forEach(n => n.classList.toggle('show', showZh));
-    enNodes.forEach(n => n.classList.toggle('show', !showZh));
-    btnZh.classList.toggle('active', showZh);
-    btnEn.classList.toggle('active', !showZh);
-    document.documentElement.lang = showZh ? 'zh-CN' : 'en';
-    localStorage.setItem('capy_lang', lang);
-  }
+        <!-- Service 3 -->
+        <div class="svc">
+          <div class="top">
+            <div class="icon" aria-hidden="true">
+              <!-- Cute Data Center SVG -->
+              <svg width="34" height="34" viewBox="0 0 64 64" fill="none">
+                <rect x="16" y="10" width="32" height="44" rx="10" fill="#dcfce7" stroke="#121622" stroke-width="3"/>
+                <rect x="22" y="16" width="20" height="8" rx="4" fill="#fff" stroke="#121622" stroke-width="3"/>
+                <rect x="22" y="28" width="20" height="8" rx="4" fill="#fff" stroke="#121622" stroke-width="3"/>
+                <rect x="22" y="40" width="20" height="8" rx="4" fill="#fff" stroke="#121622" stroke-width="3"/>
+                <circle cx="44" cy="20" r="2" fill="#ff7a18"/>
+                <circle cx="44" cy="32" r="2" fill="#ff7a18"/>
+                <circle cx="44" cy="44" r="2" fill="#ff7a18"/>
+                <path d="M10 54h44" stroke="#121622" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 id="s3h">Data Center Hands</h3>
+              <p id="s3p">On-site support for racks, IT rooms, and structured workflows.</p>
+            </div>
+          </div>
+          <ul id="s3ul">
+            <li>Rack / device mounting assistance</li>
+            <li>Inventory, labeling, photo documentation</li>
+            <li>Basic checks + clean handoff notes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  // default: Chinese, but remember user's last selection
-  const saved = localStorage.getItem('capy_lang');
-  setLang(saved === 'en' ? 'en' : 'zh');
+    <section id="about">
+      <div class="section-title">
+        <div>
+          <h2 id="aboutTitle">About</h2>
+          <p id="aboutDesc">A small team that moves fast, stays organized, and keeps things friendly.</p>
+        </div>
+      </div>
 
-  btnZh.addEventListener('click', () => setLang('zh'));
-  btnEn.addEventListener('click', () => setLang('en'));
-</script>
+      <div class="about">
+        <div class="box">
+          <h3 id="aboutH1">What we’re good at</h3>
+          <p id="aboutP1">
+            Clean installation, clear communication, and simple documentation that helps customers, banks, and vendors.
+          </p>
+
+          <div class="check">
+            <div class="mark" aria-hidden="true">✅</div>
+            <div id="aboutC1">Neat cabling, labels, and handover notes</div>
+          </div>
+          <div class="check">
+            <div class="mark" aria-hidden="true">✅</div>
+            <div id="aboutC2">On-site coordination with GCs / vendors</div>
+          </div>
+          <div class="check">
+            <div class="mark" aria-hidden="true">✅</div>
+            <div id="aboutC3">Reliable execution for camera / network / IT room tasks</div>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3 id="aboutH2">Our vibe</h3>
+          <p id="aboutP2">
+            Capybara energy: calm, friendly, and steady — but we still finish the job on schedule.
+          </p>
+
+          <div class="bubble" style="margin-top:12px" id="aboutBubble">
+            Want it to look professional AND feel approachable? That’s exactly what we aim for.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <h2 id="contactTitle">Let’s talk</h2>
+          <p id="contactSub">Send us a short message and we’ll reply by email.</p>
+        </div>
+        <div class="right">
+          <!-- Replace email if you want -->
+          <a class="email" id="emailLink" href="mailto:admin@capybaratechllc.com">admin@capybaratechllc.com</a>
+          <a class="btn secondary" href="#top" id="backTop">Back to top</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div>© <span id="year"></span> Capybara Tech LLC</div>
+        <div id="footRight">Low Voltage • Network • Data Center Support</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple i18n
+    const dict = {
+      en: {
+        navSubtitle: "Low Voltage • Network • Data Center",
+        pill1: "🦫 Friendly • Fast • Reliable",
+        navCta: "Contact",
+        kicker: "✨ Small team. Big support energy.",
+        heroTitle: "Low Voltage, Networking & Data Center Support — with Capybara-calm vibes.",
+        heroSub: "We help you deploy and maintain security cameras, structured cabling, network gear, and on-site data center tasks. Clean work, clear communication, and solid delivery.",
+        ctaPrimary: "See Services",
+        ctaSecondary: "About Us",
+        tag1: "On-site support",
+        tag2: "Deployment & troubleshooting",
+        tag3: "Documentation-friendly",
+        cardTitle: "Capybara Tech",
+        cardSub: "Cute brand, serious delivery.",
+        bubble: "We keep things simple: show up, communicate clearly, finish clean, and leave your site better than we found it.",
+        quickTitle: "Quick Scope",
+        quickSub: "Cameras • AP/Switch • Cabling • Rack/IT room support • Data center hands",
+        svcTitle: "Services",
+        svcDesc: "Practical, on-site, and documentation-ready support.",
+        svcNote: "No phone shown • Email only",
+        s1h: "Security Cameras (CCTV)",
+        s1p: "Install, adjust, and verify—clean cabling and reliable results.",
+        s1ul: [
+          "Camera & NVR setup, aiming, labeling",
+          "PoE switch integration",
+          "Basic testing & handover notes"
+        ],
+        s2h: "Network & Wi-Fi",
+        s2p: "AP / switch staging, patching, and basic troubleshooting on-site.",
+        s2ul: [
+          "AP & switch installation / rack tidy",
+          "Patch panel labeling & organization",
+          "Connectivity checks (VLAN / uplink basics)"
+        ],
+        s3h: "Data Center Hands",
+        s3p: "On-site support for racks, IT rooms, and structured workflows.",
+        s3ul: [
+          "Rack / device mounting assistance",
+          "Inventory, labeling, photo documentation",
+          "Basic checks + clean handoff notes"
+        ],
+        aboutTitle: "About",
+        aboutDesc: "A small team that moves fast, stays organized, and keeps things friendly.",
+        aboutH1: "What we’re good at",
+        aboutP1: "Clean installation, clear communication, and simple documentation that helps customers, banks, and vendors.",
+        aboutC1: "Neat cabling, labels, and handover notes",
+        aboutC2: "On-site coordination with GCs / vendors",
+        aboutC3: "Reliable execution for camera / network / IT room tasks",
+        aboutH2: "Our vibe",
+        aboutP2: "Capybara energy: calm, friendly, and steady — but we still finish the job on schedule.",
+        aboutBubble: "Want it to look professional AND feel approachable? That’s exactly what we aim for.",
+        contactTitle: "Let’s talk",
+        contactSub: "Send us a short message and we’ll reply by email.",
+        backTop: "Back to top",
+        footRight: "Low Voltage • Network • Data Center Support",
+        langBtn: "中文",
+        htmlLang: "en"
+      },
+      zh: {
+        navSubtitle: "弱电 • 网络 • 数据中心支持",
+        pill1: "🦫 可爱但靠谱 • 反馈快 • 交付稳",
+        navCta: "联系",
+        kicker: "✨ 小团队也能提供大能量支持",
+        heroTitle: "弱电 / 网络 / 数据中心现场支持 —— 带着“水豚式稳稳交付”。",
+        heroSub: "我们协助摄像头、综合布线、网络设备部署与现场故障排查，以及数据中心/机房类的现场支持。沟通清晰、施工整洁、交付可靠。",
+        ctaPrimary: "查看服务",
+        ctaSecondary: "关于我们",
+        tag1: "可提供现场支持",
+        tag2: "部署 & 排障",
+        tag3: "配合文档/验收",
+        cardTitle: "Capybara Tech",
+        cardSub: "可爱品牌，认真交付。",
+        bubble: "我们做事很简单：到场、沟通清楚、施工干净、把现场交回得更好。",
+        quickTitle: "快速范围",
+        quickSub: "摄像头 • AP/交换机 • 布线 • 机房/机柜支持 • 数据中心现场协助",
+        svcTitle: "服务内容",
+        svcDesc: "偏落地的现场服务，适合交付与验收。",
+        svcNote: "不展示电话 • 仅邮箱联系",
+        s1h: "安防摄像头（CCTV）",
+        s1p: "安装、调整、验证；走线整洁，结果可靠。",
+        s1ul: [
+          "摄像头与 NVR 基础配置、角度调整、标签",
+          "PoE 交换机接入与联调",
+          "基础测试 + 简单交付记录"
+        ],
+        s2h: "网络 & Wi-Fi",
+        s2p: "AP / 交换机上架布线，现场基础排障与整理。",
+        s2ul: [
+          "AP/交换机安装与机柜整理",
+          "配线架/跳线标签与线序管理",
+          "连通性检查（VLAN/上联基础）"
+        ],
+        s3h: "数据中心现场协助",
+        s3p: "机柜/机房现场支持，按流程执行、配合交付。",
+        s3ul: [
+          "机柜/设备安装协助",
+          "清点、贴标、拍照归档",
+          "基础检查 + 交付记录"
+        ],
+        aboutTitle: "关于我们",
+        aboutDesc: "小而精的团队：动作快、很有条理、沟通友好。",
+        aboutH1: "我们擅长什么",
+        aboutP1: "施工干净、沟通清楚、文档简单好用，方便客户/银行/供应商理解与核验。",
+        aboutC1: "走线整洁、贴标清晰、交付记录明了",
+        aboutC2: "能配合 GC / 各类供应商现场协调",
+        aboutC3: "摄像头/网络/机房任务执行稳定可靠",
+        aboutH2: "我们的风格",
+        aboutP2: "水豚气质：稳、友好、不焦虑；但交付依然按期完成。",
+        aboutBubble: "你想要“专业+不冷冰冰”的官网风格？这就是我们想传达的。",
+        contactTitle: "联系我",
+        contactSub: "发一封简短邮件，我们会尽快回复。",
+        backTop: "返回顶部",
+        footRight: "弱电 • 网络 • 数据中心支持",
+        langBtn: "EN",
+        htmlLang: "zh-CN"
+      }
+    };
+
+    let lang = "en";
+    function setLang(next){
+      lang = next;
+      const t = dict[lang];
+
+      document.documentElement.lang = t.htmlLang;
+
+      // simple text bindings
+      const ids = [
+        "navSubtitle","pill1","navCta","kicker","heroTitle","heroSub",
+        "ctaPrimary","ctaSecondary","tag1","tag2","tag3",
+        "cardTitle","cardSub","bubble","quickTitle","quickSub",
+        "svcTitle","svcDesc","svcNote",
+        "s1h","s1p","s2h","s2p","s3h","s3p",
+        "aboutTitle","aboutDesc","aboutH1","aboutP1","aboutC1","aboutC2","aboutC3",
+        "aboutH2","aboutP2","aboutBubble",
+        "contactTitle","contactSub","backTop","footRight"
+      ];
+      ids.forEach(id=>{
+        const el = document.getElementById(id);
+        if(el && typeof t[id] === "string") el.textContent = t[id];
+      });
+
+      // UL lists
+      const setList = (ulId, arr) => {
+        const ul = document.getElementById(ulId);
+        if(!ul || !Array.isArray(arr)) return;
+        ul.innerHTML = arr.map(x=>`<li>${x}</li>`).join("");
+      };
+      setList("s1ul", t.s1ul);
+      setList("s2ul", t.s2ul);
+      setList("s3ul", t.s3ul);
+
+      // Button label
+      document.getElementById("langBtn").textContent = t.langBtn;
+      document.title = (lang === "zh")
+        ? "Capybara Tech LLC | 弱电 / 网络 / 数据中心支持"
+        : "Capybara Tech LLC | Low Voltage • Network • Data Center Support";
+    }
+
+    // Toggle button
+    const btn = document.getElementById("langBtn");
+    btn.addEventListener("click", ()=>{
+      setLang(lang === "en" ? "zh" : "en");
+    });
+
+    // Default language: follow browser, but keep stable
+    const prefersZh = (navigator.language || "").toLowerCase().includes("zh");
+    setLang(prefersZh ? "zh" : "en");
+  </script>
 </body>
 </html>
+
